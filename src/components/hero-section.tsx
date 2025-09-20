@@ -32,7 +32,7 @@ const HeroSection = () => {
       {/* Navigation Header */}
       <nav className="relative z-20 flex items-center justify-between px-6 py-6">
         <div className="flex items-center gap-3">
-          <img src="/logo-connectee.png" alt="Connectee Logo" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
+          <img src="/logo-connectee.png" alt="Connectee Logo" className="h-8 w-auto object-contain" />
         </div>
         <Button 
           variant="outline" 

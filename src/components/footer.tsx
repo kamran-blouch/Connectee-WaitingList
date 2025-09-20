@@ -9,8 +9,7 @@ const Footer = () => {
             {/* Brand */}
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 gradient-primary rounded-lg" />
-                <span className="text-xl font-bold text-foreground">CONNECTEE</span>
+                <img src="/logo-connectee.png" alt="Connectee Logo" className="h-8 w-auto object-contain" />
               </div>
               <p className="text-muted-foreground leading-relaxed max-w-md">
                 Connectee is an agentic LinkedIn networking tool that automates your outreach, 

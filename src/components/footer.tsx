@@ -44,7 +44,7 @@ const Footer = () => {
           {/* Bottom section */}
           <div className="flex flex-col md:flex-row items-center justify-between pt-8 mt-8 border-t border-border">
             <p className="text-muted-foreground text-sm">
-              © 2025 StarSling. All rights reserved.
+              © 2025 Connectee. All rights reserved.
             </p>
             
             <div className="flex items-center gap-4 mt-4 md:mt-0">

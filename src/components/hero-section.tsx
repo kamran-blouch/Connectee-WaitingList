@@ -31,8 +31,14 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex flex-col overflow-hidden gradient-mesh">
       {/* Navigation Header */}
       <nav className="relative z-20 flex items-center justify-between px-6 py-6">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-6">
           <img src="/logo-connectee.png" alt="Connectee Logo" className="h-12 w-auto object-contain" />
+          <div className="hidden md:flex items-center gap-6 text-sm">
+            <a href="/about" className="text-muted-foreground hover:text-primary">About Us</a>
+            <a href="/careers" className="text-muted-foreground hover:text-primary">Careers</a>
+            <a href="/contact" className="text-muted-foreground hover:text-primary">Contact</a>
+            <a href="/privacy" className="text-muted-foreground hover:text-primary">Privacy Policy</a>
+          </div>
         </div>
         <Button 
           variant="outline" 

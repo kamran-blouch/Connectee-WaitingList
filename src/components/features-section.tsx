@@ -1,4 +1,5 @@
 import { MessageSquare, Users, BarChart3, PenTool } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const features = [
@@ -15,17 +16,18 @@ const features = [
     size: "small"
   },
   {
+    icon: PenTool,
+    title: "AI Post Creation",
+    description: "Generate LinkedIn post alternatives inspired by competitor content using your own context.",
+    size: "small"
+  },
+  {
     icon: BarChart3,
     title: "Competitor Post Analyzer",
     description: "Analyze competitor posts for engagement trends and discover top-performing content in your industry.",
     size: "medium"
   },
-  {
-    icon: PenTool,
-    title: "AI Post Creation",
-    description: "Generate LinkedIn post alternatives inspired by competitor content using your own context.",
-    size: "small"
-  }
+  
 ];
 
 const FeaturesSection = () => {
@@ -47,17 +49,23 @@ const FeaturesSection = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-min">
             {features.map((feature, index) => (
-              <div 
+              <Link 
                 key={index}
                 className={`
                   group p-6 bg-gray-900/50 border border-teal-500/20 rounded-2xl 
                   hover:border-teal-400/40 transition-all duration-700 
-                  backdrop-blur-sm relative overflow-hidden
-                  ${feature.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
-                  ${feature.size === 'medium' ? 'md:col-span-2' : ''}
+                  backdrop-blur-sm relative overflow-hidden flex flex-col
+                  ${feature.size === 'large' ? 'lg:col-span-2 lg:row-span-2' : ''}
+                  ${feature.size === 'medium' ? 'lg:col-span-2' : ''}
                   ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
                 `}
                 style={{ transitionDelay: `${index * 100}ms` }}
+                to={
+                  feature.title === 'AI Outreach' ? '/ai-outreach' :
+                  feature.title === 'AI Comment Generation' ? '/comment-generation' :
+                  feature.title === 'Competitor Post Analyzer' ? '/competitor-analysis' :
+                  feature.title === 'AI Post Creation' ? '/post-creation' : '#'
+                }
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
@@ -83,7 +91,7 @@ const FeaturesSection = () => {
                     <div className="w-8 h-8 border border-teal-500/30 rotate-45" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
